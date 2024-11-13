@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <!-- EditText pentru numere -->
+    <EditText
+        android:id="@+id/numar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Număr 1"
+        android:inputType="number"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/numar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Număr 2"
+        android:inputType="number"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/numar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Număr 3"
+        android:inputType="number"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Checkbox-uri corespunzătoare fiecărui EditText -->
+    <CheckBox
+        android:id="@+id/checkbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selectează Număr 1"
+        android:layout_marginBottom="8dp"/>
+
+    <CheckBox
+        android:id="@+id/checkbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selectează Număr 2"
+        android:layout_marginBottom="8dp"/>
+
+    <CheckBox
+        android:id="@+id/checkbox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selectează Număr 3"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Buton pentru a lansa o nouă activitate -->
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Buton Compute pentru calcul -->
+    <Button
+        android:id="@+id/buttonCompute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compute"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>
