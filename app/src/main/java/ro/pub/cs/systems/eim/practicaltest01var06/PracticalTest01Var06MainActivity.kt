@@ -21,8 +21,8 @@ class PracticalTest01Var06MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_practical_test01_var06_main)
         // Restaurăm scorul dacă activitatea este recreată
         if (savedInstanceState != null) {
-            scor = savedInstanceState.getInt("scor", 0)
-            scorAnterior = savedInstanceState.getInt("scorAnterior", 0)
+            scor = savedInstanceState.getInt("scor")
+            scorAnterior = savedInstanceState.getInt("scorAnterior")
         }
         // Referințe pentru câmpurile de introducere a numerelor și checkbox-uri
         val numar1: EditText = findViewById(R.id.numar1)
@@ -62,6 +62,7 @@ class PracticalTest01Var06MainActivity : AppCompatActivity() {
         }
         // Ascultător pentru butonul "Compute" - lansează activitatea secundară
         buttonCompute.setOnClickListener {
+            Log.d("MainActivity", "Scor înainte de Compute: $scor")
             if (scor == scorAnterior) {
                 // Dacă scorul nu s-a schimbat, afișăm scorul direct
                 Toast.makeText(this, "Scorul actual este: $scor", Toast.LENGTH_SHORT).show()
@@ -84,7 +85,9 @@ class PracticalTest01Var06MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == RESULT_OK) {
             val castig = data?.getIntExtra("castig", 0) ?: 0
+            Log.d("MainActivity", "Castig primit: $castig")
             scor += castig // Adăugăm la scorul total
+            Log.d("MainActivity", "Scor actualizat: $scor")
             Toast.makeText(this, "Scorul actual: $scor", Toast.LENGTH_SHORT).show()
         }
     }
@@ -98,7 +101,7 @@ class PracticalTest01Var06MainActivity : AppCompatActivity() {
     // Restaurăm scorul atunci când activitatea este recreată
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        scor = savedInstanceState.getInt("scor", 0)
-        scorAnterior = savedInstanceState.getInt("scorAnterior", 0)
+        scor = savedInstanceState.getInt("scor")
+        scorAnterior = savedInstanceState.getInt("scorAnterior")
     }
 }
